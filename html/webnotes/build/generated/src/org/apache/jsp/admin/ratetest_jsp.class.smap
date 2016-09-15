@@ -1,0 +1,13 @@
+SMAP
+ratetest_jsp.java
+JSP
+*S JSP
+*F
++ 0 ratetest.jsp
+admin/ratetest.jsp
+*L
+5,68:50
+72,6:118
+78,2:125
+79,45:127
+*E

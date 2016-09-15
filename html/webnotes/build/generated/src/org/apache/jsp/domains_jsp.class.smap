@@ -1,0 +1,19 @@
+SMAP
+domains_jsp.java
+JSP
+*S JSP
+*F
++ 0 domains.jsp
+domains.jsp
++ 1 header.jsp
+header.jsp
+*L
+5,16:49
+1#1,77:65
+78,3:143
+80,2:146
+82:148,3
+83,6:151
+89,2:158
+20#0,22:160
+*E

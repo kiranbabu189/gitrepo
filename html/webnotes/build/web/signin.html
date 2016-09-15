@@ -1,0 +1,147 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Welcome Back Login Form A Flat Responsive Widget Template :: w3layouts</title>
+
+	<!-- For-Mobile-Apps -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Welcome Back Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //For-Mobile-Apps -->
+
+	<!-- Style --> <link rel="stylesheet" href="css/signin.css" type="text/css" media="all" />
+        
+
+	<!-- Web-Fonts -->
+		<link href='//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+	<!-- //Web-Fonts -->
+        <style>
+            .img-rounded{
+                border-radius: 20px;
+                width:248px;
+                height:160px;
+            }
+        </style>
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script>
+             
+            function upl(){
+               $.ajax({
+                  url: 'login_image.jsp',
+                  type: 'post',
+                  data: $("form#form").serialize(),
+                  success: function(data){
+                      if($.trim(data) !== "null"){
+                       var img = "upload/"+$.trim(data); 
+                         document.getElementById("img").src =  img;
+                      }
+                  }
+               }); 
+            }
+            $(document).ready(function(){ 
+             $('form#form').submit(function (e) {
+                    e.preventDefault();
+                        $.ajax({
+                            url: 'select.jsp',
+                            type: 'post',
+                            data: $('form#form').serialize(),
+                            success: function (data) {
+                               console.log(data);
+                                if ($.trim(data) == "Success")
+                                {
+                                    $('.invalidmsg').css({"display": "none"});
+                                    console.log("asdas");
+                                    $('#pass').css({"border":"none"});
+                                    $('#nm').css({"border":"none"});
+                                    window.location = "index.jsp";
+                                    return true;
+                                }else if($.trim(data) == "Admin"){
+                                    $('.invalidmsg').css({"display": "none"});
+                                    console.log(data);
+                                    $('#pass').css({"border":"none"});
+                                    $('#nm').css({"border":"none"});
+                                    window.location = "admin/admin_page.jsp";
+                                    return true;
+                                }
+                                else if($.trim(data) == "both"){
+                                    $('#nm').css({"box-shadow":" 0 0 10px red"});
+                                    $('#pass').css({"box-shadow":" 0 0 10px red"});
+                                    $('.invalidmsg').css({"display": "block"});
+                                    return false;
+                                }else if ($.trim(data) == "username")
+                                {
+                                    $('#nm').css({"box-shadow":" 0 0 10px red"});
+                                    $('#pass').css({"border":"none"});
+                                    $('.invalidmsg').css({"display": "block"});
+                                    return false;
+                                }else if ($.trim(data) == "password")
+                                {
+                                    $('#pass').css({"box-shadow":" 0 0 10px red"});
+                                    $('#nm').css({"border":"none"});
+                                    $('.invalidmsg').css({"display": "block"});
+                                    return false;
+                                }
+                            }
+                        });
+                    });
+            });
+        </script>
+</head>
+<body style="background-image: url(images/bg.png)">
+
+	<h1>LOGIN FORM</h1>
+
+	<div class="container">
+
+		<div class="image">
+			<img src="images/prof.jpg" class="img-rounded" alt="Welcome" id="img" >
+		</div>
+
+		<h2>Welcome</h2>
+		<h3>Log into your Account</h3>
+
+		<div class="signin">
+			<form id="form">
+				<input type="text" class="user" placeholder="Username" id="nm" required="" name="name" onblur="upl()">
+				<input type="password" class="pass" placeholder="Password" id="pass" required="" name="password">
+				<input type="submit" value="LOGIN" />				
+				<ul>
+					<li>
+						<input type="checkbox" id="brand1" value="">
+						
+					</li>
+				</ul>
+			</form>
+		</div>
+
+		<br>
+
+<!--		<h4>(OR)</h4>
+		<h5>Login With</h5>
+
+		<div class="social">
+			<ul class="social-icons slideanim">
+				<li><a href="#" class="facebook" title="Go to Our Facebook Page"></a></li>
+				<li><a href="#" class="twitter" title="Go to Our Twitter Account"></a></li>
+				<li><a href="#" class="googleplus" title="Go to Our Google Plus Account"></a></li>
+			</ul>
+		</div>-->
+
+	</div>
+
+	<div class="footer">
+		<p> &copy; 2016 Welcome Back Login Form. All Rights Reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+	</div>
+
+</body>
+</html>

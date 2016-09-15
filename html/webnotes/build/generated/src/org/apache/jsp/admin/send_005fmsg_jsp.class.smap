@@ -1,0 +1,11 @@
+SMAP
+send_005fmsg_jsp.java
+JSP
+*S JSP
+*F
++ 0 send_msg.jsp
+admin/send_msg.jsp
+*L
+5,23:49
+27:72
+*E

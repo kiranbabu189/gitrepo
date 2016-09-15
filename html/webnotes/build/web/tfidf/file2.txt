@@ -1,0 +1,39 @@
+java stringbuilder class is used to create mutable (modifiable) string. the java stringbuilder class is same as stringbuffer class except that it is non-synchronized. it is available since jdk 1.5. 
+important constructors of stringbuilder class
+
+    stringbuilder(): creates an empty string builder with the initial capacity of 16.
+    stringbuilder(string str): creates a string builder with the specified string.
+    stringbuilder(int length): creates an empty string builder with the specified capacity as length.
+
+    class a{  
+    public static void main(string args[]){  
+    stringbuilder sb=new stringbuilder("hello ");  
+    sb.append("java");//now original string is changed  
+    system.out.println(sb);//prints hello java  
+    }  
+    }  
+
+    class a{  
+    public static void main(string args[]){  
+    stringbuilder sb=new stringbuilder("hello ");  
+    sb.insert(1,"java");//now original string is changed  
+    system.out.println(sb);//prints hjavaello  
+    }  
+    }  
+
+    class a{  
+    public static void main(string args[]){  
+    stringbuilder sb=new stringbuilder("hello");  
+    sb.replace(1,3,"java");  
+    system.out.println(sb);//prints hjavalo  
+    }  
+    }  
+
+    class a{  
+    public static void main(string args[]){  
+    stringbuilder sb=new stringbuilder("hello");  
+    sb.delete(1,3);  
+    system.out.println(sb);//prints hlo  
+    }  
+    }  
+

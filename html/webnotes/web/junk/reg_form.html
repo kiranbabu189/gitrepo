@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <style>
+            .ch{
+                /*background-color:;*/
+                
+            }
+            .row{
+                margin-bottom: 10px;
+            }
+            .container{
+                width:70%;
+            }
+            .jumbotron{
+                background-color: #122b40;
+                color:white;
+            }
+        </style>
+        <script>
+            function checkname(){
+                var name = document.getElementById("name").value;
+                var regname =  /^[a-zA-Z]+$/;
+                if(name.match(regname)){
+                    return true;
+                }
+                else{
+                    alert("ENTER A VALID NAME");
+                    document.getElementById("name").value="";
+                }
+            }
+            function checkphone(x){
+                var phno = x.value;
+                var regph = /^[0-9]+$/;
+                if(phno.match(regph)){
+                    return true;
+                }
+                else{
+                    alert("ENTER A VALID NUMBER");
+                    x.value="";
+                }
+            }
+        </script>
+    </head>
+    <body style="background-color: #31b0d5">
+    <div class="container " >
+        <div class="jumbotron">
+            <h2>Registration Form</h2>
+            <p>Please fill in the form</p>
+        </div>
+        <hr size=2>
+        <form class="form-inline" role="form" action="insert.jsp" method="GET">
+            <div class="row">
+                        <div class="col-md-2 ch"><label for="name">Enter Name</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="name" onkeyup="checkname()" name="name" placeholder="Name" style="width:inherit;">
+                        </div>
+            </div>
+            <div class="row">
+                        <div class="col-md-2 ch"><label for="name">Enter Sex</label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="radio">
+                                <label><input type="radio" name="sex" value="male" >&nbsp;&nbsp;Male</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="sex" value="female" >&nbsp;&nbsp;Female</label>
+                            </div>
+                        </div>
+            </div>
+            <div class="row">
+                        <div class="col-md-2 ch">
+                            <label for="age">Enter age</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="age" onkeyup="checkphone(this)" name="age" placeholder="Age" style="width:inherit;">
+                        </div>
+            </div>
+            <div class="row">
+                        <div class="col-md-2 ch">
+                            <label for="phno">Enter Mobile No:</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="phone" name="phno"  placeholder="Mobile number" style="width:inherit;">
+                    </div>
+            </div>
+            <div class="row">
+                        <div class="col-md-2 ch">
+                            <label for="email">Enter Email</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" style="width:inherit;">
+                         </div>
+            </div>
+            <div class="row">
+                        <div class="col-md-2 ch">
+                            <label for="address">Enter Address</label>
+                        </div>
+                        <div class="col-md-10">
+                                <textarea class="form-control" id="address" name="address" placeholder="Address" style="width:inherit;"></textarea>
+                        </div>
+            </div>
+            <div class="row">
+                        <div class="col-md-2 ch"><label for="name">Enter Username</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="name" onkeyup="checkname()" name="name" placeholder="username" style="width:inherit;">
+                        </div>
+            </div>
+            <div class="row">
+                        <div class="col-md-2 ch"><label for="name">Enter Password</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="password" class="form-control" id="name" onkeyup="checkname()" name="name" placeholder="password" style="width:inherit;">
+                        </div>
+            </div>
+            <div class="row">
+                        <div class="col-md-2 ch"><label for="name">Re-Enter Password</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="password" class="form-control" id="name" onkeyup="checkname()" name="name" placeholder="password" style="width:inherit;">
+                        </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 ch">
+                </div>
+                <div class="col-md-10 ch">
+                    <button type="submit" class="btn btn-success" style="width:inherit;">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+SMAP
+login_005fimage_jsp.java
+JSP
+*S JSP
+*F
++ 0 login_image.jsp
+login_image.jsp
++ 1 db.jsp
+db.jsp
+*L
+5,5:51
+1#1,12:56
+12,2:68
+9#0,2:70
+11,6:73
+16,2:79
+*E

@@ -1,0 +1,10 @@
+SMAP
+flag_005fuser_jsp.java
+JSP
+*S JSP
+*F
++ 0 flag_user.jsp
+flag_user.jsp
+*L
+5,19:47
+*E
